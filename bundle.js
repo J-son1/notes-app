@@ -42,6 +42,9 @@
           this.displayNotes();
         }
         displayNotes() {
+          document.querySelectorAll("div.note").forEach((element) => {
+            element.remove();
+          });
           const notes = this.model.getNotes();
           notes.forEach((note) => {
             const noteEl = document.createElement("div");
@@ -59,8 +62,6 @@
   var NotesModel = require_notesModel();
   var NotesView = require_notesView();
   var model = new NotesModel();
-  model.addNote("This is an example note");
   console.log(model.getNotes());
   var view = new NotesView(model);
-  view.displayNotes();
 })();

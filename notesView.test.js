@@ -34,4 +34,14 @@ describe('Notes view', () => {
     expect(document.querySelectorAll('div.note').length).toEqual(1);
     expect(document.querySelectorAll('div.note')[0].innerText).toEqual('Note one');
   });
+
+  it('clears the list of previous notes before displaying', () => {
+    model.addNote('Note one');
+    model.addNote('Note two');
+
+    view.displayNotes();
+    view.displayNotes();
+
+    expect(document.querySelectorAll('div.note').length).toEqual(2);
+  });
 });
