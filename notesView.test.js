@@ -44,4 +44,14 @@ describe('Notes view', () => {
 
     expect(document.querySelectorAll('div.note').length).toEqual(2);
   });
+
+  it('clears the input after adding a note', () => {
+    const input = document.querySelector('#add-note-input');
+    input.value = 'Note one';
+
+    const button = document.querySelector('#add-note-button');
+    button.click();
+
+    expect(input.value).toEqual("");
+  });
 });
