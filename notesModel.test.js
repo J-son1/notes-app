@@ -31,4 +31,12 @@ describe("NotesModel", () => {
 
     expect(model.getNotes()).toEqual([]);
   });
+
+  it("sets the notes", () => {
+    notes = ['Buy bread', 'Go for a run'];
+
+    model.setNotes(notes);
+
+    expect(model.getNotes()).toEqual(notes);
+  })
 });
